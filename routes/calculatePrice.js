@@ -6,7 +6,6 @@ router.get("/", (req, res) => {
   const distanceInKm = req.query.distance;
 
   const amountOfDays = Math.floor(distanceInKm / 800);
-  console.log(amountOfDays);
 
   // Convert to number with 2 decimal numbers.
   const totalPrice = +(distanceInKm * pricePerKm + 1000 * amountOfDays).toFixed(
