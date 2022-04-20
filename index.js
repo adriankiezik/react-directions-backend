@@ -3,12 +3,15 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 5000;
+const findGeolocation = require("./routes/findGeolocation");
+
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 const server = http.createServer(app);
 
 app.use(cors());
+app.use("/find", findGeolocation);
 
 app.get("/", (req, res) => {
   res.send("It's working!");
